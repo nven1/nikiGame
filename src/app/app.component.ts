@@ -10,11 +10,11 @@ export class AppComponent {
   columns = [
     {
       id:0,
-      count:0
+      count:8
     },
     {
       id:1,
-      count:9
+      count:1
     },
     {
       id:2,
@@ -33,35 +33,35 @@ export class AppComponent {
     },
     {
       size: 2,
-      column: 1
+      column: 0
     },
     {
       size: 3,
-      column: 1
+      column: 0
     },
     {
       size: 4,
-      column: 1
+      column: 0
     },
     {
       size: 5,
-      column: 1
+      column: 0
     },
     {
       size: 6,
-      column: 1
+      column: 0
     },
     {
       size: 7,
-      column: 1
+      column: 0
     },
     {
       size: 8,
-      column: 1
+      column: 0
     },
     {
       size: 9,
-      column: 1
+      column: 0
     },
   ];
 
@@ -124,7 +124,10 @@ setWidth(i) {
 }
 checkOver() {
   if ((this.columns[0].count || this.columns[2].count) == 9) {
-    alert('congratulations kiddo')
+    setTimeout(() => {
+      alert('congratulations kiddo');
+    }, 200);
+    
   }
 }
 
