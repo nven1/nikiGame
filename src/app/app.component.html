@@ -1,12 +1,13 @@
 <div class="wrapper">
   <div class="bar">
-    <span>moves: {{moves}}</span>
+    <span>moves: {{moves}} - Record - 962 by the niki</span>
     <button (click)="reset()">Reset</button>
   </div>
   
   <div *ngFor="let col of columns; index as i" class="column" (click)="selectStartColumn(i)">
     <ng-container *ngFor="let tile of objects; index as j">
         <div *ngIf="tile.column == i" class="tile flexCenter" [ngClass]="{'highlight': targetTile==j}" [ngStyle]="setWidth(j)">
+          {{j}}
         </div>
     </ng-container>
     

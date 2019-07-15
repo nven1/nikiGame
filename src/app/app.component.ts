@@ -10,11 +10,11 @@ export class AppComponent {
   columns = [
     {
       id:0,
-      count:8
+      count:0
     },
     {
       id:1,
-      count:1
+      count:9
     },
     {
       id:2,
@@ -33,35 +33,35 @@ export class AppComponent {
     },
     {
       size: 2,
-      column: 0
+      column: 1
     },
     {
       size: 3,
-      column: 0
+      column: 1
     },
     {
       size: 4,
-      column: 0
+      column: 1
     },
     {
       size: 5,
-      column: 0
+      column: 1
     },
     {
       size: 6,
-      column: 0
+      column: 1
     },
     {
       size: 7,
-      column: 0
+      column: 1
     },
     {
       size: 8,
-      column: 0
+      column: 1
     },
     {
       size: 9,
-      column: 0
+      column: 1
     },
   ];
 
@@ -116,7 +116,7 @@ setWidth(i) {
   console.log(i);
   let style = {
     'width':(20+i*10)+'%',
-    'background-color': 'rgb(150, '+30*i+', 300 )'
+    'background-color': 'rgb(150, '+30*i+', 255 )'
   };
   console.log(style);
   return style;
