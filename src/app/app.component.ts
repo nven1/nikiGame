@@ -111,4 +111,15 @@ reset() {
   this.moves = 0;
 }
 
+setWidth(i) {
+  console.log(i);
+  let style = {
+    'width':(20+i*10)+'%',
+    'background-color': 'rgb(150, '+30*i+', 300 )'
+  };
+  console.log(style);
+  return style;
+  
+}
+
 }

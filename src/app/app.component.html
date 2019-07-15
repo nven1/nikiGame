@@ -6,8 +6,7 @@
   
   <div *ngFor="let col of columns; index as i" class="column" (click)="selectStartColumn(i)">
     <ng-container *ngFor="let tile of objects; index as j">
-        <div *ngIf="tile.column == i" class="tile" [ngClass]="{'highlight': targetTile==j}">
-          {{j}}
+        <div *ngIf="tile.column == i" class="tile flexCenter" [ngClass]="{'highlight': targetTile==j}" [ngStyle]="setWidth(j)">
         </div>
     </ng-container>
     

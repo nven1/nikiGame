@@ -1,3 +1,4 @@
+@import '../styles.scss';
 .wrapper {
     height: 100vh;
     width: 100vw;
@@ -9,11 +10,20 @@
     grid-area: 1/1/1/4;
     display: grid;
     grid-template-columns: 1fr;
-    background-color: blue;
+    background-color: #4c4c9a;
 
     button {
+        @extend %buttonStrip;
+        background-color: #404086;
+        padding: 0 2vh;
         grid-area: 1/1;
         justify-self: end;
+        color: white;
+        background-color: .7;
+        cursor: pointer;
+        &:hover {
+            opacity: .7;
+        }
         
     }
     span {
@@ -31,8 +41,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 95vh;
-    //grid-row-start: 2;
+    align-items: center;
+    height: 100%;
     
 }
 .column:nth-child(even) {
@@ -42,8 +52,14 @@
 .tile {
     margin: 0 2vh;
     background-color: red;
-    height: 10vh;
+    height: 7vh;
 }
 .highlight {
-    background-color: blue !important;
+    background-color: rgb(221, 87, 87) !important;
 }
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-rows: 10vh 90vh;
+    }
+  }
