@@ -110,6 +110,7 @@ reset() {
   this.columns[1].count=9;
   this.columns[2].count=0;
   this.moves = 0;
+  this.targetTile = undefined;
 }
 
 setWidth(i) {
