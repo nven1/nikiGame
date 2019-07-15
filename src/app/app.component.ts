@@ -68,6 +68,7 @@ selectStartColumn(col) {
         if (this.targetTile<i) {
           this.objects[this.targetTile].column=col;
           this.targetTile = undefined;
+          break;
         }
       }
     }
