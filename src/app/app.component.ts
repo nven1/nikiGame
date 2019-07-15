@@ -47,7 +47,7 @@ export class AppComponent {
     },
     {
       size: 9,
-      column: 1
+      column: 0
     },
   ];
 
@@ -64,9 +64,16 @@ selectStartColumn(col) {
   }
   else if (this.targetTile != undefined) {
     for(let i=0; i<this.objects.length; i++) {
+      
       if(this.objects[i].column == col) {
+        console.log(i)
         if (this.targetTile<i) {
+          console.log(this.targetTile+'  '+i)
           this.objects[this.targetTile].column=col;
+          this.targetTile = undefined;
+          break;
+        }
+        else {
           this.targetTile = undefined;
           break;
         }
