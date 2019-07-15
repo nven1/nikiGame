@@ -3,11 +3,47 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 5vh 95vh;
+}
+.bar {
+    grid-area: 1/1/1/4;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: blue;
+
+    button {
+        grid-area: 1/1;
+        justify-self: end;
+        
+    }
+    span {
+        grid-area: 1/1;
+        text-align: center;
+        align-self: center;
+        color: white;
+        font-size: 1.2em;
+        
+    }
 }
 .column {
     background-color: rgb(243, 243, 243);
+    display:grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 95vh;
+    //grid-row-start: 2;
     
 }
 .column:nth-child(even) {
     background-color: rgb(248, 248, 248);
+}
+
+.tile {
+    margin: 0 2vh;
+    background-color: red;
+    height: 10vh;
+}
+.highlight {
+    background-color: blue !important;
 }

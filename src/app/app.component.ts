@@ -7,9 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'niki';
-  columns = [0,1,2];
+  columns = [
+    {
+      id:0,
+      count:0
+    },
+    {
+      id:1,
+      count:9
+    },
+    {
+      id:2,
+      count:0
+    },
+  ];
   targetTile;
-  biggest;
+  moves = 0;
+  startCol;
 
 
   objects = [
@@ -47,30 +61,28 @@ export class AppComponent {
     },
     {
       size: 9,
-      column: 0
+      column: 1
     },
   ];
 
 selectStartColumn(col) {
   if (this.targetTile == undefined) {
     for(let i=0; i<this.objects.length; i++) {
-      //console.log('col: '+col+' col2:'+this.objects[i].column);
       if (this.objects[i].column == col) {
         this.targetTile = i;
-        console.log(this.targetTile);
+        this.startCol = col;
         break;
       }
     }
   }
   else if (this.targetTile != undefined) {
     for(let i=0; i<this.objects.length; i++) {
-      
-      if(this.objects[i].column == col) {
-        console.log(i)
+      if(this.columns[col].count==0) {
+        this.move(col);
+      }
+      else if(this.objects[i].column == col) {
         if (this.targetTile<i) {
-          console.log(this.targetTile+'  '+i)
-          this.objects[this.targetTile].column=col;
-          this.targetTile = undefined;
+          this.move(col);
           break;
         }
         else {
@@ -80,6 +92,23 @@ selectStartColumn(col) {
       }
     }
   }
+}
+move(col) {
+  this.objects[this.targetTile].column=col;
+  this.targetTile = undefined;
+  this.columns[col].count++;
+  this.columns[this.startCol].count--;
+  this.moves++;
+}
+
+reset() {
+  this.objects.forEach(i => {
+    i.column=1;
+  });
+  this.columns[0].count=0;
+  this.columns[1].count=9;
+  this.columns[2].count=0;
+  this.moves = 0;
 }
 
 }

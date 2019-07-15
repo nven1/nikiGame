@@ -1,19 +1,16 @@
 <div class="wrapper">
+  <div class="bar">
+    <span>moves: {{moves}}</span>
+    <button (click)="reset()">Reset</button>
+  </div>
+  
   <div *ngFor="let col of columns; index as i" class="column" (click)="selectStartColumn(i)">
     <ng-container *ngFor="let tile of objects; index as j">
-        <div *ngIf="tile.column == i">
+        <div *ngIf="tile.column == i" class="tile" [ngClass]="{'highlight': targetTile==j}">
           {{j}}
         </div>
     </ng-container>
     
 
   </div>
-<!--   <div class="p2 platform">
-
-  </div>
-  <div class="p3 platform">
-
-  </div> -->
-
-
 </div>
