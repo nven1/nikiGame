@@ -99,6 +99,7 @@ move(col) {
   this.columns[col].count++;
   this.columns[this.startCol].count--;
   this.moves++;
+  this.checkOver();
 }
 
 reset() {
@@ -120,6 +121,11 @@ setWidth(i) {
   console.log(style);
   return style;
   
+}
+checkOver() {
+  if ((this.columns[0].count || this.columns[2].count) == 9) {
+    alert('congratulations kiddo')
+  }
 }
 
 }
